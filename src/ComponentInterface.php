@@ -26,7 +26,9 @@ interface ComponentInterface
     /**
      * The types of input that this component will accept. An empty array denotes a component that accepts no input.
      * Types must either be a primitive PHP type or the FQCN if it expects an object. Types my be followed by empty
-     * square brackets to denote that it accepts multiple inputs of a given type.
+     * square brackets to denote that it accepts multiple inputs of a given type. You may also use the special type
+     * <code>'*'</code> to denote that this component will accept anything (or <code>'*[]'</code> for a collection
+     * of anything).
      *
      * E.g., <code>['string', 'string[]']</code>.
      *
