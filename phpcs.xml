@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ruleset name="NextWorks">
+    <description>PHP_CodeSniffer Configuration</description>
+
+    <file>./src</file>
+    <file>./tests</file>
+
+    <!-- Color output for maximum pretty -->
+    <arg name="colors"/>
+
+    <!-- The rules to use when critiquing our code -->
+    <rule ref="PSR1"/>
+    <rule ref="PSR2"/>
+</ruleset>

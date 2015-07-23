@@ -1,0 +1,26 @@
+{
+    "name": "dredge/component",
+    "type": "library",
+    "description": "Dredge component interface",
+    "keywords": ["dredge", "component", "interface"],
+    "homepage": "http://github.com/bharley/dredge-component",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Blake Harley",
+            "email": "blake@blakeharley.com",
+            "homepage": "http://www.blakeharley.com/"
+        }
+    ],
+    "require": {
+        "league/container": "^1.3",
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*",
+        "squizlabs/php_codesniffer": "2.*"
+    },
+    "autoload": {
+        "psr-4": {"Dredge\\Component\\": "src/"}
+    }
+}
