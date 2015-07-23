@@ -2,10 +2,9 @@
 
 namespace Dredge\Component;
 
-use League\Container\Container;
-
 /**
- * A component is an arbitrary piece of a larger puzzle.
+ * A component is an arbitrary piece of a larger puzzle. A container may choose to implement the League's
+ * ComponentAwareInterface in order to get access to it.
  */
 interface ComponentInterface
 {
@@ -43,11 +42,6 @@ interface ComponentInterface
      * @return string|null This component's output type
      */
     public function outputType();
-
-    /**
-     * @param Container $container Available services that this component can use
-     */
-    public function setContainer(Container $container);
 
     /**
      * The options the end user has set on this component. This method should perform any necessary validation on the
