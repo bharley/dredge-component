@@ -10,6 +10,39 @@ use League\Container\Container;
 interface ComponentInterface
 {
     /**
+     * The user-friendly name for this component. This will be displayed as plain text.
+     *
+     * @return string The name of this component
+     */
+    public function getName();
+
+    /**
+     * The description will explain to the user how this component is expected to work. HTML is allowed.
+     *
+     * @return string This component's description
+     */
+    public function getDescription();
+
+    /**
+     * The types of input that this component will accept. An empty array denotes a component that accepts no input.
+     * Types must either be a primitive PHP type or the FQCN if it expects an object. Types my be followed by empty
+     * square brackets to denote that it accepts multiple inputs of a given type.
+     *
+     * E.g., <code>['string', 'string[]']</code>.
+     *
+     * @return string[] This component's input types
+     */
+    public function inputTypes();
+
+    /**
+     * The output that this component produces. A component that produces no output should return <code>null</code>,
+     * and types must either be a primitive PHP type or the FQCN if it produces an object.
+     *
+     * @return string|null This component's output type
+     */
+    public function outputType();
+
+    /**
      * @param Container $container Available services that this component can use
      */
     public function setContainer(Container $container);
@@ -24,25 +57,6 @@ interface ComponentInterface
      * @throws \Dredge\Component\Exception\SettingsException If the settings aren't properly configured
      */
     public function setSettings(array $settings);
-
-    /**
-     * The types of input that this component will accept. An empty array denotes a component that accepts no input.
-     * Types must either be a primitive PHP type or the FQCN if it expects an object. Types my be followed by empty
-     * square brackets to denote that it accepts multiple inputs of a given type.
-     *
-     * E.g., <code>['string', 'string[]']</code>.
-     *
-     * @return string[]
-     */
-    public function inputTypes();
-
-    /**
-     * The output that this component produces. A component that produces no output should return <code>null</code>,
-     * and types must either be a primitive PHP type or the FQCN if it produces an object.
-     *
-     * @return string|null
-     */
-    public function outputType();
 
     /**
      * @param mixed $input Input is guaranteed to be
