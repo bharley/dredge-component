@@ -44,17 +44,6 @@ interface ComponentInterface
     public function outputType();
 
     /**
-     * The options the end user has set on this component. This method should perform any necessary validation on the
-     * settings and throw the <code>\Dredge\Component\Exception\SettingsException</code> exception in the event that
-     * the settings provided are inadequate.
-     *
-     * @param array $settings
-     *
-     * @throws \Dredge\Component\Exception\SettingsException If the settings aren't properly configured
-     */
-    public function setSettings(array $settings);
-
-    /**
      * @param mixed $input Input is guaranteed to be
      *
      * @return mixed
